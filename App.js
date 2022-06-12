@@ -13,9 +13,12 @@ class PianoApp
     playNote(e)
     {
         const key = document.querySelector(`.hints[data-key=${e.key.toUpperCase()}]`);
+        const noteText = document.querySelector(".note");
+        
         if(!key) return;
 
         const noteFile = key.getAttribute("data-file");
+        noteText.innerText = key.getAttribute("data-note");
         const audio = new Audio(`./notes/${noteFile}.wav`);
         audio.play();
     }

@@ -1,6 +1,7 @@
 html 
 {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
   
 *, *::before, *::after 
@@ -11,7 +12,7 @@ html
 #piano 
 {
     background-color: #00471b;
-    width: 992px;
+    width: 485px;
     height: 290px;
     margin: 80px auto;
     padding: 90px 20px 0 20px;
@@ -22,7 +23,7 @@ html
 .keys 
 {
     background-color: #040404;
-    width: 949px;
+    width: 454px;
     height: 180px;
     padding-left: 2px;
     overflow: hidden;
@@ -39,15 +40,40 @@ html
     border-radius: 0 0 3px 3px;
 }
 
+.hints
+{
+    position: absolute;
+    top: 75%;
+    left: 30%;
+    font-size: 25px;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.key--sharp
+{
+    top: 20%;
+    color: #fff;
+    left: 85%;
+    z-index: 3;
+    font-size: 20px;
+}
+
+.keys:hover .hints
+{
+    opacity: 1;
+}
+
 .key.black--key::after 
 {
     background-color: #1d1e22;
     content: "";
     position: absolute;
-    left: -18px;
+    left: 28px;
     width: 32px;
     height: 100px;
     border-radius: 0 0 3px 3px;
+    z-index: 2;
 }
 
 @media screen and (max-width: 768px) 
@@ -58,18 +84,5 @@ html
   
     .keys {
       width: 318px;
-    }
-}
-
-@media screen and (max-width: 1199px) and (min-width: 769px) 
-{
-    #piano
-    {
-        width: 675px;
-    }
-
-    .keys
-    {
-        width: 633px;
     }
 }

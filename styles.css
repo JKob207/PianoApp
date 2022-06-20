@@ -19,6 +19,14 @@ header
     font-style: italic;
 }
 
+main
+{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 #piano 
 {
     background-color: #a46628;
@@ -95,8 +103,19 @@ header
     z-index: 2;
 }
 
+.nextKey
+{
+    background-color: #0eff0e;
+}
+
+
 @media screen and (max-width: 768px) 
 {
+    main
+    {
+        display: block;
+    }
+
     #piano {
       width: 358px;
     }

@@ -125,6 +125,41 @@ input:checked + .slider:before
     margin: 0 auto;
 }
 
+.note-G
+{
+    color: blue;
+}
+
+.note-A
+{
+    color: purple;
+}
+
+.note-C
+{
+    color: red;
+}
+
+.note-B
+{
+    color: yellowgreen;
+}
+
+.note-D
+{
+    color: palevioletred;
+}
+
+.note-E
+{
+    color: yellowgreen;
+}
+
+.note-F
+{
+    color: green;
+}
+
 .double-note
 {
     display: flex;

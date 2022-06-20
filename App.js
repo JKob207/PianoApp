@@ -42,9 +42,9 @@ class PianoApp
 
     songTutor()
     {
-        const HappyBirtdayNotesKeys = ['G','G','H','G','K','J','G','G','H','G','V','K','G','G','G','D','K','J','H','F','F','D','K','V','K'];
+        const HappyBirtdayNotesKeys = ['G','G','H','G','K','J','G','G','H','G','V','K','G','G','H','D','K','J','H','F','F','D','K','V','K'];
         const HappyBirtdayNotes = document.querySelectorAll(".tutor-note");
-        const HappyBirtdayDataFile = ['08','08','10','08','13','12','08','08','10','08','15','13','08','08','08','05','13','12','10','06','06','05','13','15','13'];
+        const HappyBirtdayDataFile = ['08','08','10','08','13','12','08','08','10','08','15','13','08','08','10','05','13','12','10','06','06','05','13','15','13'];
         let currentNote = 0;
 
         const checkNote = (e) => {

@@ -48,38 +48,44 @@ class PianoApp
         let currentNote = 0;
 
         const checkNote = (e) => {
-            const pressedKey = e.key.toUpperCase();
-            if(pressedKey == HappyBirtdayNotesKeys[currentNote])
+            if(this.tutor)
             {
-                console.log("OK");
-                HappyBirtdayNotes[currentNote].classList.add("successNote");
-                let currentkeyOnPiano = document.querySelector('div[data-file="'+HappyBirtdayDataFile[currentNote]+'"]').parentNode;
-                let nextkeyOnPiano = document.querySelector('div[data-file="'+HappyBirtdayDataFile[currentNote+1]+'"]').parentNode;
-                currentkeyOnPiano.classList.remove("nextKey");
-                nextkeyOnPiano.classList.add("nextKey");
-                currentNote++;
-            }else
-            {
-                console.log("WRONG!");
-                HappyBirtdayNotes.forEach(el => {
-                    el.classList.remove("successNote");
-                })
-                let currentkeyOnPiano = document.querySelector('div[data-file="'+HappyBirtdayDataFile[currentNote]+'"]').parentNode;
-                currentkeyOnPiano.classList.remove("nextKey");
-                document.querySelector('div[data-file="'+HappyBirtdayDataFile[0]+'"]').parentNode.classList.add("nextKey");
-                currentNote = 0;
+                const pressedKey = e.key.toUpperCase();
+                if(pressedKey == HappyBirtdayNotesKeys[currentNote])
+                {
+                    console.log("OK");
+                    HappyBirtdayNotes[currentNote].classList.add("successNote");
+                    let currentkeyOnPiano = document.querySelector('div[data-file="'+HappyBirtdayDataFile[currentNote]+'"]').parentNode;
+                    let nextkeyOnPiano = document.querySelector('div[data-file="'+HappyBirtdayDataFile[currentNote+1]+'"]').parentNode;
+                    currentkeyOnPiano.classList.remove("nextKey");
+                    nextkeyOnPiano.classList.add("nextKey");
+                    currentNote++;
+                }else
+                {
+                    console.log("WRONG!");
+                    HappyBirtdayNotes.forEach(el => {
+                        el.classList.remove("successNote");
+                    })
+                    let currentkeyOnPiano = document.querySelector('div[data-file="'+HappyBirtdayDataFile[currentNote]+'"]').parentNode;
+                    currentkeyOnPiano.classList.remove("nextKey");
+                    document.querySelector('div[data-file="'+HappyBirtdayDataFile[0]+'"]').parentNode.classList.add("nextKey");
+                    currentNote = 0;
+                }   
             }
         }
 
         this.tutor = !this.tutor;
         
-        if(this.tutor)
+        if(this.tutor == true)
         {
+            console.log("Good");
             console.log("Play a song!");
             document.querySelector('div[data-file="'+HappyBirtdayDataFile[0]+'"]').parentNode.classList.add("nextKey");
             window.addEventListener("keydown", checkNote);
         }else
         {
+            console.log("Also good");
+            console.log(this.tutor);
             window.removeEventListener("keydown", checkNote);
             HappyBirtdayNotes.forEach(el => {
                 el.classList.remove("successNote");
